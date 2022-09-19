@@ -48,6 +48,9 @@ Sistem akan diuji dengan input step, impulse, dan ramp dengan memvarasikan nilai
       com3 = stepinfo(complete3)
       com4 = stepinfo(complete4)
       com5 = stepinfo(complete5)
+      
+      [y,u] = step(complete5); % Calculate Steady-State error
+      sse = abs(1 - y(end))
 
       figure(2);
       hold all;
@@ -76,7 +79,7 @@ Untuk Kp = 10
 | Rise time | 0.3239 | 0.2733 | 0.2228 | 0.1832 | 0.1539 | 
 | Settling time | 6.8781 | 2.2819 | 1.5011 | 1.7615 | 2.0198 |
 | Overshoot | 63.4865 | 34.3278 | 23.0063 | 17.7268 | 14.9400 |
-| SSE | --- | --- | --- | --- | --- |
+| SSE | 0.0904 | 0.0914 | 0.0952 | 0.0904 | 0.0876 |
 
 Uji sistem tanggap step
 
